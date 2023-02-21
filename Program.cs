@@ -154,31 +154,31 @@ int b = 0;
 
 while (value <= spiralMatrix.GetLength(0) * spiralMatrix.GetLength(1))
 {
-  spiralMatrix[a, b] = value;
-  value++;
-  if (a <= b + 1 && a + b < spiralMatrix.GetLength(1) - 1)
-    b++;
-  else if (a < b && a + b >= spiralMatrix.GetLength(0) - 1)
-    a++;
-  else if (a >= b && a + b > spiralMatrix.GetLength(1) - 1)
-    b--;
-  else
-    a--;
+    spiralMatrix[a, b] = value;
+    value++;
+    if (a <= b + 1 && a + b < spiralMatrix.GetLength(1) - 1)
+        b++;
+    else if (a < b && a + b >= spiralMatrix.GetLength(0) - 1)
+        a++;
+    else if (a >= b && a + b > spiralMatrix.GetLength(1) - 1)
+        b--;
+    else
+        a--;
 }
 
 SpiralArray(spiralMatrix);
 
-void SpiralArray (int[,] array)
+void SpiralArray(int[,] array)
 {
-  for (int i = 0; i < array.GetLength(0); i++)
-  {
-    for (int j = 0; j < array.GetLength(1); j++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-      if (array[i,j] / 10 <= 0)
-      Console.Write($" {array[i,j]} ");
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            if (array[i, j] / 10 <= 0)
+                Console.Write($" {array[i, j]} ");
 
-      else Console.Write($"{array[i,j]} ");
+            else Console.Write($"{array[i, j]} ");
+        }
+        Console.WriteLine();
     }
-    Console.WriteLine();
-  }
 }
